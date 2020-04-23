@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>lazycollectionview</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (UICollectionView *)collectionView {
+    if (!_collectionView) {
+        _collectionView = [[UICollectionView alloc] init];
+        [self.view addSubview:_collectionView];
+    }
+    return _collectionView;
+}
+
+- (void)initWithCollectionView{
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
+    // item大小
+    flowLayout.itemSize = CGSizeMake(10, 10);
+    // 每个section内缩进
+    flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    // 同一个section内部 item的水平方向间隙
+    flowLayout.minimumLineSpacing = 5;
+    // 同一个section内部间item的垂直方向的间距
+    flowLayout.minimumInteritemSpacing = 5;
+    self.collectionView.collectionViewLayout = flowLayout;
+    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([&lt;#Class#&gt; class]) bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"&lt;#cellId#&gt;"];
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    &lt;#code#&gt;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    &lt;#code#&gt;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    &lt;#UICollectionViewCell#&gt; *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"&lt;#cellId#&gt;" forIndexPath:indexPath];
+    return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    &lt;#code#&gt;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E3A589AB-2D9B-4F7D-AA13-B0F355667A20</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>lazy UICollectionView</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>lazy UICollectionView</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
